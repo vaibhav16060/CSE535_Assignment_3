@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Register as Admin"
+        android:textSize="30dp"
+        android:id="@+id/tv_register_banner"
+        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="on the system"
+        android:textSize="30dp"
+        android:id="@+id/tv_register_banner_cont"
+        android:layout_below="@+id/tv_register_banner"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="User Name"
+        android:ems="10"
+        android:id="@+id/tb_user"
+        android:layout_below="@+id/tv_register_banner_cont"
+        android:layout_centerHorizontal="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:ems="10"
+        android:hint="Password"
+        android:id="@+id/tb_pass"
+        android:layout_below="@+id/tb_user"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Register !"
+        android:id="@+id/tb_register"
+        android:onClick="onRegisterButtonClick"
+        android:layout_below="@+id/tb_pass"
+        android:layout_centerHorizontal="true" />
+</RelativeLayout>
