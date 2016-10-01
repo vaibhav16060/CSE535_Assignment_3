@@ -36,13 +36,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tb_id_display"
-        android:text="tb_name_display"
+        android:text="tb_id_display"
         android:clickable="false"
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_alignTop="@+id/tv_name"
-        android:layout_alignParentRight="true" />
+        android:layout_alignTop="@+id/tv_id"
+        android:layout_toRightOf="@+id/tv_id"
+        android:layout_marginLeft="50dp" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -65,9 +66,9 @@
         android:cursorVisible="false"
         android:focusable="false"
         android:focusableInTouchMode="false"
-        android:layout_alignTop="@+id/tv_id"
-        android:layout_alignLeft="@+id/tb_id_display"
-        android:layout_alignStart="@+id/tb_id_display" />
+        android:layout_alignTop="@+id/tv_name"
+        android:layout_toRightOf="@+id/tv_name"
+        android:layout_marginLeft="50dp" />
 
     <EditText
         android:id="@+id/tb_grievance_display"
@@ -76,17 +77,22 @@
         android:layout_width="match_parent"
         android:maxLines="4"
         android:lines="4"
+        android:clickable="false"
+        android:cursorVisible="false"
+        android:focusable="false"
+        android:focusableInTouchMode="false"
         android:hint="your complaint"
-        android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_below="@+id/tb_id_display"
-        android:layout_marginTop="20dp"/>
+        android:layout_below="@+id/tb_name_display"
+        android:layout_marginTop="20dp"
+        android:layout_above="@+id/btn_resolved" />
 
     <Button
         android:layout_width="wrap_content"
         android:text="Mark Resolved !"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tb_grievance_display"
-        android:layout_centerHorizontal="true"
-        android:onClick="onResolvedButtonClick"/>
+        android:id="@+id/btn_resolved"
+        android:onClick="onResolvedButtonClick"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true" />
 </RelativeLayout>

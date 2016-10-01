@@ -23,6 +23,7 @@ public class Grievance extends SQLiteOpenHelper  {
     public static final String COL_NAME = "name";
     public static final String COL_FILE_NAME = "filename";
     public static final String COL_INSERTED_ON = "inserted_on";
+    public static final String COL_SERVICED_ON = "serviced_on";
 
     public Grievance(Context con){
         super(con, DATABASE, null, 1);
@@ -81,14 +82,14 @@ public class Grievance extends SQLiteOpenHelper  {
     public String[][] getAllGrievances(){
         String [][]all_grievances = null;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor result =  db.rawQuery( "select id, name, filename, inserted_on from " + TABLE_NAME + " where serviced_on is null", null );
+        Cursor result =  db.rawQuery( "select id, name, filename, inserted_on, serviced_on from " + TABLE_NAME + "", null );
         result.moveToFirst();
         int count = 0;
         while(result.isAfterLast() == false){
             count++;
             result.moveToNext();
         }
-        all_grievances = new String[count][4];
+        all_grievances = new String[count][5];
         result.moveToFirst();
         int i = 0;
         while(result.isAfterLast() == false){
@@ -96,6 +97,7 @@ public class Grievance extends SQLiteOpenHelper  {
             all_grievances[i][1] = result.getString(result.getColumnIndex(COL_NAME));
             all_grievances[i][2] = result.getString(result.getColumnIndex(COL_FILE_NAME));
             all_grievances[i][3] = result.getString(result.getColumnIndex(COL_INSERTED_ON));
+            all_grievances[i][4] = result.getString(result.getColumnIndex(COL_SERVICED_ON));
             i++;
             result.moveToNext();
         }

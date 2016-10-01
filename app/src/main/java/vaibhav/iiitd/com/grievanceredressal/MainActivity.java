@@ -30,7 +30,10 @@ public class MainActivity extends AppCompatActivity {
                                   EditText tb_username = (EditText)findViewById(R.id.tb_username);
                                   EditText tb_password = (EditText)findViewById(R.id.tb_password);
                                   String real_password = details.getString(tb_username.getText().toString(), "");
-                                  if(tb_username.getText().toString().toLowerCase().equals("user") && tb_password.getText().toString().toLowerCase().equals("user")){
+                                  if(tb_username.getText().toString().equals("") || tb_password.getText().toString().equals("")){
+                                      Toast.makeText(MainActivity.this, "No field can be left blank", Toast.LENGTH_LONG).show();
+                                  }
+                                  else if(tb_username.getText().toString().toLowerCase().equals("user") && tb_password.getText().toString().toLowerCase().equals("user")){
                                       Intent user_login = new Intent(MainActivity.this, UserScreen.class);
                                       startActivity(user_login);
                                   }

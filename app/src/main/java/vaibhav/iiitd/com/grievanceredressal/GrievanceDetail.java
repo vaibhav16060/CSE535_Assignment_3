@@ -20,10 +20,11 @@ import java.io.InputStream;
 import android.util.Log;
 import java.io.FileInputStream;
 import android.content.DialogInterface;
+import android.widget.Button;
 
 public class GrievanceDetail extends AppCompatActivity {
 
-    String id = null, name = null, filename = null, inserted_on=null;
+    String id = null, name = null, filename = null, inserted_on=null, serviced_on=null;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,11 +39,16 @@ public class GrievanceDetail extends AppCompatActivity {
             name = data_from_main.getString("name");
             filename = data_from_main.getString("filename");
             inserted_on = data_from_main.getString("inserted_on");
+            serviced_on = data_from_main.getString("serviced_on");
         }
 
-        EditText tb_id_display = (EditText)findViewById(R.id.tb_id_display);
-        EditText tb_name_display = (EditText)findViewById(R.id.tb_name_display);
+        EditText tb_id_display = (EditText)findViewById(R.id.tb_name_display);
+        EditText tb_name_display = (EditText)findViewById(R.id.tb_id_display);
         EditText tb_grievance_display= (EditText)findViewById(R.id.tb_grievance_display);
+        Button btn_resolved = (Button)findViewById(R.id.btn_resolved);
+        if(serviced_on != null){
+            btn_resolved.setEnabled(false);
+        }
         tb_id_display.setText(id, TextView.BufferType.EDITABLE);
         tb_name_display.setText(name, TextView.BufferType.EDITABLE);
         String ret = "";

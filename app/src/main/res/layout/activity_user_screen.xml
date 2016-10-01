@@ -37,14 +37,16 @@
         android:hint="Enter your complaint"
         android:layout_below="@+id/tb_full_name"
         android:layout_marginTop="20dp"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:layout_above="@+id/button" />
 
     <Button
         android:layout_width="wrap_content"
         android:text="Submit !"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/tb_grievance"
         android:onClick="onSubmitButtonPressed"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentBottom="true"
+        android:layout_alignLeft="@+id/tb_full_name"
+        android:layout_alignStart="@+id/tb_full_name"
+        android:id="@+id/button" />
 </RelativeLayout>
