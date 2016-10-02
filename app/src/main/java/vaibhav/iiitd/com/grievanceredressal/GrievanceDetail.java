@@ -106,6 +106,21 @@ public class GrievanceDetail extends AppCompatActivity {
                 .setPositiveButton(android.R.string.yes, new DialogInterface.OnClickListener() {
                     public void onClick(DialogInterface dialog, int which) {
                         db.delete(id, name, filename, inserted_on);
+                        try{
+                            File file = new File(getApplicationContext().getFilesDir(), (filename + ".txt"));
+                            Boolean b = file.delete();
+                        }
+                        catch(Exception e){
+                            try{
+                                File folder= new File(Environment.getExternalStorageDirectory().getAbsolutePath(),"Greviance");
+                                folder.mkdirs();
+                                File file= new File(folder.getAbsolutePath(), (filename + ".txt"));
+                                file.delete();
+                            }
+                            catch(Exception f){
+                                Log.e("not found", "not found");
+                            }
+                        }
                     }
                 })
                 .setNegativeButton(android.R.string.no, new DialogInterface.OnClickListener() {

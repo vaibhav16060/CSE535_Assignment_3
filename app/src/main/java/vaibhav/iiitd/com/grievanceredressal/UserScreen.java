@@ -70,6 +70,9 @@ public class UserScreen extends AppCompatActivity {
 
         }
         db.insertGrievance(tb_enrollment.getText().toString(), tb_full_name.getText().toString(), insert_file_name);
+        tb_enrollment.setText("");
+        tb_full_name.setText("");
+        tb_grievance.setText("");
         Toast.makeText(UserScreen.this, "The data has been succcesfully saved and will be resolved by the Admin!", Toast.LENGTH_LONG).show();
     }
 }
