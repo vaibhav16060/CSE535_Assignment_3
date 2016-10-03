@@ -27,6 +27,8 @@ public class Register extends AppCompatActivity {
         SharedPreferences.Editor editor = sharedpreferences.edit();
         editor.putString(tb_user.getText().toString(), tb_pass.getText().toString());
         editor.commit();
+        tb_user.setText("");
+        tb_pass.setText("");
         Toast.makeText(Register.this, "The Username and Password is registered", Toast.LENGTH_LONG).show();
 
     }

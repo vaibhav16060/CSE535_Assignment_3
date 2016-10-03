@@ -36,10 +36,14 @@ public class MainActivity extends AppCompatActivity {
                                   else if(tb_username.getText().toString().toLowerCase().equals("user") && tb_password.getText().toString().toLowerCase().equals("user")){
                                       Intent user_login = new Intent(MainActivity.this, UserScreen.class);
                                       startActivity(user_login);
+                                      tb_username.setText("");
+                                      tb_password.setText("");
                                   }
                                   else if(tb_password.getText().toString().equals(real_password)){
                                       Intent admin_login = new Intent(MainActivity.this, AdminScreen.class);
                                       startActivity(admin_login);
+                                      tb_username.setText("");
+                                      tb_password.setText("");
                                   }
                                   else{
                                       Toast.makeText(MainActivity.this, "This login in not recognized by us !", Toast.LENGTH_LONG).show();
